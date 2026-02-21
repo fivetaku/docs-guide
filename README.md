@@ -70,17 +70,14 @@ Claude Code가 마켓플레이스 등록과 설치를 알아서 진행합니다.
 
 ### 방법 2: 슬래시 명령어로 설치
 
+마켓플레이스 등록 후 한 줄로 설치:
+
 ```
 /plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git
+/plugin install docs-guide
 ```
 
-등록 후:
-
-```
-/plugin
-```
-
-목록에서 `docs-guide`를 선택하면 설치됩니다. 설치 후 **재시작**.
+설치 후 Claude Code를 **재시작**하세요.
 
 ### 방법 3: 수동 설치
 
