@@ -70,10 +70,15 @@ Claude Code가 마켓플레이스 등록과 설치를 알아서 진행합니다.
 
 ### 방법 2: 슬래시 명령어로 설치
 
-마켓플레이스 등록 후 한 줄로 설치:
+먼저 마켓플레이스를 등록하세요:
 
 ```
 /plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git
+```
+
+등록이 완료되면 플러그인을 설치하세요:
+
+```
 /plugin install docs-guide
 ```
 
