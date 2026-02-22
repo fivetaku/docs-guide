@@ -114,16 +114,16 @@ Explain FastAPI dependency injection from official docs
 "공식문서", "official docs", "문서 확인" 같은 키워드가 있으면 자동으로 이 플러그인이 동작합니다.
 키워드 없이 라이브러리 관련 질문을 해도 필요하다고 판단하면 공식문서를 가져옵니다.
 
-### /docs 명령어 (직접 실행)
+### /docs-guide 명령어 (직접 실행)
 
 ```
-/docs react useEffect
-/docs next.js caching
-/docs django ORM
-/docs stripe webhooks
+/docs-guide react useEffect
+/docs-guide next.js caching
+/docs-guide django ORM
+/docs-guide stripe webhooks
 ```
 
-형식: `/docs [라이브러리] [궁금한 내용]`
+형식: `/docs-guide [라이브러리] [궁금한 내용]`
 
 ## 구성요소
 
@@ -131,7 +131,7 @@ Explain FastAPI dependency injection from official docs
 |------|------|------|
 | Agent | `docs-guide` | 핵심 엔진. 문서 사이트 접속 → 내용 읽기 → 설명 |
 | Skill | `docs-knowledge` | llms.txt 패턴 지식 + 68개 사이트 URL 데이터베이스 |
-| Command | `/docs` | 수동 실행용 슬래시 명령어 |
+| Command | `/docs-guide` | 수동 실행용 슬래시 명령어 |
 
 ## 응답 형식
 

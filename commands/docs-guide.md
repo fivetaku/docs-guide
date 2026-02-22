@@ -1,5 +1,5 @@
 ---
-name: docs
+name: docs-guide
 description: Fetch and explain official documentation for any library or framework
 argument-hint: "[library] [question]"
 allowed-tools:
@@ -9,7 +9,7 @@ allowed-tools:
   - Task
 ---
 
-# /docs Command
+# /docs-guide Command
 
 The user wants to look up official documentation for a library or framework.
 
@@ -18,10 +18,10 @@ The user wants to look up official documentation for a library or framework.
 The argument format is: `[library] [question]`
 
 Examples:
-- `/docs react useEffect` → Library: React, Question: useEffect
-- `/docs next.js app router caching` → Library: Next.js, Question: app router caching
-- `/docs fastapi dependency injection` → Library: FastAPI, Question: dependency injection
-- `/docs` (no args) → Ask user what library and topic they want to look up
+- `/docs-guide react useEffect` → Library: React, Question: useEffect
+- `/docs-guide next.js app router caching` → Library: Next.js, Question: app router caching
+- `/docs-guide fastapi dependency injection` → Library: FastAPI, Question: dependency injection
+- `/docs-guide` (no args) → Ask user what library and topic they want to look up
 
 If no arguments provided, ask the user:
 1. What library/framework?
