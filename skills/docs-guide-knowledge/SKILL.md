@@ -1,5 +1,5 @@
 ---
-name: docs-knowledge
+name: docs-guide-knowledge
 description: This skill should be used when a user asks about the llms.txt standard, wants to find or fetch official documentation for a library or framework, or discusses documentation accessibility for AI systems. Example queries include "llms.txt란 뭐야", "React 공식 문서 찾아줘", "fetch the Next.js docs", "documentation for LLMs", "AI용 문서 접근성", "라이브러리 문서 가져와", "which sites have llms.txt", "공식 문서 URL 알려줘", "docs index for Stripe".
 ---
 
@@ -60,7 +60,7 @@ This enables:
 
 ### Step 1: Check known sites list
 
-Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-knowledge/references/llms-txt-sites.md` for the maintained list of 66+ known llms.txt URLs.
+Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list of 66+ known llms.txt URLs.
 
 ### Step 2: Try llms.txt URL patterns
 
@@ -73,7 +73,7 @@ If the library is not in the known list, identify the official documentation sit
 
 ### Step 3: Fallback strategies (priority order)
 
-If no llms.txt variant is found, check `${CLAUDE_PLUGIN_ROOT}/skills/docs-knowledge/references/fallback-strategies.md`:
+If no llms.txt variant is found, check `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/fallback-strategies.md`:
 
 1. **Per-technology strategy** — 40+ technologies with tested best URLs
 2. **GitHub raw markdown** — Most reliable for open source (LLM-native format, no rendering issues)
@@ -131,4 +131,4 @@ Match the user's language. If they ask in Korean, explain in Korean. If English,
 
 ## Known Sites
 
-Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-knowledge/references/llms-txt-sites.md` for the maintained list.
+Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list.
