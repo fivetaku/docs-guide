@@ -116,7 +116,7 @@ When unsure between FETCH and SKIP, answer from knowledge first, then offer: "ê³
 
 ### Step 1: Check known llms.txt sites
 
-Read `${CLAUDE_PLUGIN_ROOT}/skills/docs-knowledge/references/llms-txt-sites.md` for the maintained list of verified llms.txt URLs. If the library is listed, use that URL directly.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list of verified llms.txt URLs. If the library is listed, use that URL directly.
 
 ### Step 2: Find official site + try llms.txt
 
@@ -135,7 +135,7 @@ If llms.txt exists:
 
 ### Step 3: Fallback strategies (no llms.txt)
 
-If llms.txt doesn't exist, check `${CLAUDE_PLUGIN_ROOT}/skills/docs-knowledge/references/fallback-strategies.md` and try in this order:
+If llms.txt doesn't exist, check `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/fallback-strategies.md` and try in this order:
 
 **3a. Per-technology strategy** â€” the fallback file has 40+ technologies mapped with best URLs and known issues (e.g., Elasticsearch needs version branch, PyTorch is JS-heavy).
 

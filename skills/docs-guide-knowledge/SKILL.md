@@ -129,6 +129,92 @@ Source: [URL(s) fetched]
 
 Match the user's language. If they ask in Korean, explain in Korean. If English, respond in English.
 
+## Version Awareness
+
+Documentation changes across versions. Always identify the correct version before fetching.
+
+### Version Detection Priority
+
+1. **Project dependencies**: Check `package.json`, `requirements.txt`, `pyproject.toml`, `go.mod` etc. for installed version
+2. **User mention**: Parse version from query — "React 19", "Django 5.0", "@18", "^18.2.0"
+3. **Normalize variants**: `react 18`, `React v18`, `@18`, `^18.2.0` → all mean React 18.x
+4. **Version-specific URLs**: Some sites have versioned paths:
+   - Next.js: `/docs/14/getting-started`
+   - Django: `/en/5.0/topics/`
+   - Python: `/3.12/library/`
+5. **Default**: If no version info, use latest stable and note which version
+
+When documentation shows version-specific behavior (e.g., "New in 19.0"), mention it explicitly so the user knows whether it applies to their project.
+
+### Common Version Pitfalls
+
+| Situation | Risk | Action |
+|-----------|------|--------|
+| User says "React" without version | React 18 vs 19 have significant API differences | Check package.json first |
+| Library has LTS and current | User may need LTS-specific docs | Ask if unclear |
+| Pre-release/canary docs | May contain unstable APIs | Warn the user |
+| Archived docs (e.g., Create React App) | Deprecated project | Note that the project is no longer maintained |
+
+## Disambiguation Patterns
+
+When a user query maps to multiple possible libraries, resolve before fetching.
+
+### By Project Context
+
+Scan dependency files to narrow down:
+- "Router" in React project → `react-router-dom`
+- "Router" in Express project → `express.Router`
+- "ORM" in Python project → check for `sqlalchemy`, `django`, `tortoise-orm`
+- "auth" → `next-auth`, `passport`, `firebase-auth`, `supabase-auth` etc.
+
+### By Explicit Ask
+
+If project context is insufficient or ambiguous:
+- Ask: "React Router와 Express Router 중 어떤 건가요?" / "Which router — React Router or Express?"
+- Provide 2-3 specific options, not open-ended
+
+### Ecosystem Conventions
+
+Some terms have strong ecosystem defaults:
+- "middleware" in Next.js → `middleware.ts` (edge middleware)
+- "middleware" in Express → `app.use()` pattern
+- "store" in Vue → Pinia (modern) or Vuex (legacy)
+- "state management" in React → useState/useReducer (built-in) or Zustand/Redux (external)
+
+## Retrieval Optimization
+
+### Token-Aware Fetching
+
+Large documentation files can exhaust context. Follow these practices:
+
+1. **Index first**: Always fetch `llms.txt` (index) before `llms-full.txt` (full dump)
+2. **Targeted fetch**: From the index, identify the single most relevant page URL
+3. **Section extraction**: After fetching a page, extract only the relevant section — do not include entire page content in response
+4. **Progressive depth**: Answer from first fetch. If user asks "더 자세히" or "more detail", fetch additional pages
+5. **Multi-page strategy**: For broad topics, fetch up to 3 pages maximum. Summarize connections between pages.
+
+### URL Fix Patterns
+
+Documentation URLs often have inconsistencies. Handle these automatically:
+
+| Pattern | Fix |
+|---------|-----|
+| `llms.txt` links end in `.md` but 404 | Strip `.md` extension and retry |
+| Path returns 404 | Try parent path for table of contents |
+| GitHub `main` branch 404 | Try `master`, then version-specific branches (e.g., `v8.17`) |
+| URL has trailing slash issues | Try both with and without trailing `/` |
+
+## Concurrency with Other Agents
+
+When the docs-guide agent is invoked alongside other skills or agents:
+- Docs-guide handles all external documentation lookup
+- Built-in `claude-code-guide` handles Claude Code, Claude Agent SDK, and Claude API questions
+- If a question spans both (e.g., "How to use Stripe with Claude Code MCP"), docs-guide handles the Stripe part
+
 ## Known Sites
 
-Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list.
+Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list of 68+ verified sites.
+
+## Fallback Reference
+
+For technologies without llms.txt, refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/fallback-strategies.md` for 40+ technology-specific strategies and platform detection methods.

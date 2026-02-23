@@ -1,6 +1,6 @@
 ---
 name: docs-guide
-description: Fetch and explain official documentation for any library or framework
+description: Fetch and explain official docs for any library
 argument-hint: "[library] [question]"
 allowed-tools:
   - WebFetch
