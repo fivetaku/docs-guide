@@ -2,7 +2,13 @@
 
 > 아무 라이브러리의 **공식문서**를 가져와서 정확하게 설명해주는 Claude Code 플러그인
 
-## 이게 뭔가요?
+## 이런 분을 위한 도구입니다
+
+- 코딩 중 라이브러리 사용법이 헷갈릴 때 **공식문서 기반**으로 정확한 답을 원하는 분
+- AI가 옛날 정보나 잘못된 정보를 알려줘서 고생한 경험이 있는 분
+- React, Next.js, Django 등 다양한 프레임워크 문서를 빠르게 확인하고 싶은 분
+
+## 어떻게 작동하나요?
 
 코딩하다가 "이거 어떻게 쓰는 거지?" 싶을 때, 보통 구글링하거나 ChatGPT에 물어봅니다.
 문제는 **AI가 옛날 정보**나 **잘못된 정보**를 알려줄 때가 있다는 겁니다.
@@ -146,6 +152,11 @@ Source: https://react.dev/reference/react/useEffect
 일부 사이트는 JavaScript로만 렌더링되어 내용을 읽을 수 없습니다 (예: Apple Developer, Oracle Docs).
 이런 경우 AI 지식 기반으로 답변하되, "공식 문서에서 직접 확인하지 못했습니다"라고 알려줍니다.
 
-## 만든 사람
+## 요구사항
 
-- [fivetaku](https://github.com/fivetaku)
+- **필수**: Claude Code
+- **선택**: 없음 (모든 도구가 내장되어 있습니다)
+
+## 라이선스
+
+MIT License — [fivetaku](https://github.com/fivetaku)
