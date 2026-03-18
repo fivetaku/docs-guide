@@ -6,7 +6,7 @@ allowed-tools:
   - WebFetch
   - WebSearch
   - Read
-  - Task
+  - Agent
 ---
 
 # /docs-guide Command
@@ -29,18 +29,7 @@ If no arguments provided, ask the user:
 
 ## Execute
 
-Use the docs-guide agent (Task tool with subagent_type "docs-guide:docs-guide") to fetch and explain the documentation. Pass the library name and question to the agent.
-
-If the Task tool cannot find the agent, perform the documentation lookup directly:
-
-1. Identify the library's official documentation site
-2. Try fetching `{site}/llms.txt` with WebFetch
-3. If found, scan the index for relevant page URLs
-4. WebFetch the specific documentation page(s)
-5. If llms.txt not found, WebSearch for `{library} official documentation {topic}`
-6. WebFetch the top result from the official domain
-7. Explain based on fetched content
-8. Cite source URL(s)
+Use the docs-guide agent (Agent tool with subagent_type "docs-guide:docs-guide") to fetch and explain the documentation. Pass the library name and question to the agent.
 
 ## Response
 

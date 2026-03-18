@@ -60,7 +60,7 @@ This enables:
 
 ### Step 1: Check known sites list
 
-Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list of 66+ known llms.txt URLs.
+Refer to `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/llms-txt-sites.md` for the maintained list of 68+ known llms.txt URLs.
 
 ### Step 2: Try llms.txt URL patterns
 
