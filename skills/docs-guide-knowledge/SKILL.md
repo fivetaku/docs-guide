@@ -115,7 +115,7 @@ After fetching documentation content:
 - **Marketing llms.txt**: `neo4j.com/llms.txt` is marketing index, not docs. Use `neo4j.com/docs/` directly.
 - **Hugo sites**: No detectable platform signals. Skip platform detection, go to sitemap/GitHub.
 
-## Response Format
+## Response Format (권장 — 도메인에 맞춰 가변 가능)
 
 ```
 [Clear explanation based on fetched documentation]
@@ -126,6 +126,8 @@ After fetching documentation content:
 Source: [URL(s) fetched]
 (version: X.Y | method: llms.txt/GitHub/sitemap/WebSearch)
 ```
+
+> 위 형식은 **권장**이다. 사용자 질문 도메인에 따라 코드 예시 위치/Source 표기 형식 등은 가변 가능. 단 **Source 표기**(URL + 방법)는 reproducibility의 본질이라 유지.
 
 Match the user's language. If they ask in Korean, explain in Korean. If English, respond in English.
 
