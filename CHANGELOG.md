@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.1] - 2026-05-04
+
+### Changed
+- knowledge SKILL.md "Response Format" 섹션 → "권장 — 도메인에 맞춰 가변 가능" qualifier 추가 (fossil v3 처치)
+
+### Preserved
+- Source 표기 (URL + 방법) — reproducibility 본질
+- llms.txt 표준 활용 + version awareness
+- 플랫폼 자동 감지 (Marketing llms.txt 회피, Hugo sites 등)
+
 ## [1.3.0] - 2026-02-25
 
 ### Changed
