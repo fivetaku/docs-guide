@@ -1,10 +1,10 @@
 # Known llms.txt Sites
 
-Last verified: 2026-02-20
+Last verified: 2026-05-04
 
-## Verified Sites — 68개
+## Verified Sites — 92개
 
-### Frontend (10)
+### Frontend (9)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
@@ -13,11 +13,12 @@ Last verified: 2026-02-20
 | Vue | https://vuejs.org/llms.txt |
 | Svelte | https://svelte.dev/llms.txt |
 | Angular | https://angular.dev/llms.txt |
-| Astro | https://docs.astro.build/llms.txt |
 | Nuxt | https://nuxt.com/llms.txt |
 | Chakra UI | https://chakra-ui.com/llms.txt |
 | Mantine | https://mantine.dev/llms.txt |
 | Nx (monorepo) | https://nx.dev/llms.txt |
+
+> **Astro 제거**: `docs.astro.build/llms.txt` 404 (2026-05-04 검증). fallback-strategies.md 사용.
 
 ### Backend (2)
 
@@ -38,7 +39,7 @@ Last verified: 2026-02-20
 | Redis | https://redis.io/llms.txt |
 | Qdrant (Vector DB) | https://qdrant.tech/llms.txt |
 
-### Vector / Graph DB (5)
+### Vector / Graph DB (7)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
@@ -46,6 +47,8 @@ Last verified: 2026-02-20
 | Pinecone | https://docs.pinecone.io/llms.txt |
 | Weaviate | https://docs.weaviate.io/llms.txt |
 | Milvus | https://milvus.io/llms.txt |
+| Vespa | https://docs.vespa.ai/llms.txt |
+| Zilliz Cloud | https://docs.zilliz.com/llms.txt |
 | Neo4j (⚠️ 마케팅 인덱스) | https://neo4j.com/llms.txt |
 
 > **Neo4j 주의**: `neo4j.com/llms.txt`는 마케팅 사이트 인덱스. Cypher 등 기술 문서는 `neo4j.com/docs/cypher-manual/current/`에서 직접 WebFetch.
@@ -117,39 +120,66 @@ Last verified: 2026-02-20
 | Ghost | https://docs.ghost.org/llms.txt |
 | Sanity | https://www.sanity.io/docs/llms.txt |
 
-### AI/ML (2)
+### AI Frameworks / Agents (9)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
-| LangChain | https://python.langchain.com/llms.txt |
+| LangChain (Python) | https://python.langchain.com/llms.txt |
+| LangChain (canonical) | https://docs.langchain.com/llms.txt |
+| LangGraph | https://langchain-ai.github.io/langgraph/llms.txt |
+| Vercel AI SDK | https://ai-sdk.dev/llms.txt |
+| Haystack | https://docs.haystack.deepset.ai/llms.txt |
+| DSPy | https://dspy.ai/llms.txt |
+| Inspect AI (UK AISI) | https://inspect.aisi.org.uk/llms.txt |
 | CrewAI | https://docs.crewai.com/llms.txt |
+| Mastra | https://mastra.ai/docs/llms.txt |
 
-### LLM Providers (4)
+### LLM Providers (10)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
-| OpenAI | https://platform.openai.com/docs/llms.txt |
+| OpenAI | https://developers.openai.com/api/docs/llms.txt |
+| Anthropic (Claude API) | https://platform.claude.com/llms.txt |
+| Google Gemini API | https://ai.google.dev/gemini-api/docs/llms.txt |
+| xAI (Grok) | https://docs.x.ai/llms.txt |
 | Mistral | https://docs.mistral.ai/llms.txt |
 | Cohere | https://docs.cohere.com/llms.txt |
 | Perplexity | https://docs.perplexity.ai/llms.txt |
+| Groq | https://console.groq.com/llms.txt |
+| Ollama | https://ollama.com/llms.txt |
+| Anyscale | https://docs.anyscale.com/llms.txt |
 
-### AI Dev Tools / Infra (7)
+> **OpenAI URL 변경**: `platform.openai.com/docs/llms.txt`는 301 redirect됨. `developers.openai.com/api/docs/llms.txt`가 canonical.
+> **Anthropic URL 변경**: 기존 `docs.anthropic.com`은 `platform.claude.com`으로 마이그레이션됨. claude-code-guide는 Claude Code/SDK 담당, docs-guide는 일반 Claude API/모델 정보 fetch에 사용 가능.
+> **Gemini 비표준 경로**: `ai.google.dev/llms.txt`는 404. `gemini-api/docs/llms.txt`가 정확한 경로 (Algolia처럼 비표준).
+
+### AI Dev Tools / Infra (11)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
 | Windsurf (Codeium) | https://docs.windsurf.com/llms.txt |
+| Cline | https://docs.cline.bot/llms.txt |
 | Tabnine | https://docs.tabnine.com/llms.txt |
 | LiteLLM | https://docs.litellm.ai/llms.txt |
 | Together AI | https://docs.together.ai/llms.txt |
 | Fireworks AI | https://docs.fireworks.ai/llms.txt |
 | Replicate | https://replicate.com/docs/llms.txt |
 | Databricks | https://docs.databricks.com/llms.txt |
+| Cerebras | https://inference-docs.cerebras.ai/llms.txt |
+| Baseten | https://docs.baseten.co/llms.txt |
+| NVIDIA NIM | https://docs.nvidia.com/nim/llms.txt |
 
-### AI Observability (1)
+### AI Observability (7)
 
 | Library/Service | llms.txt URL |
 |----------------|-------------|
 | Weights & Biases | https://docs.wandb.ai/llms.txt |
+| LangFuse | https://langfuse.com/llms.txt |
+| Helicone | https://docs.helicone.ai/llms.txt |
+| PromptLayer | https://docs.promptlayer.com/llms.txt |
+| Galileo | https://docs.galileo.ai/llms.txt |
+| Phoenix (Arize) | https://arize.com/docs/phoenix/llms.txt |
+| Braintrust | https://www.braintrust.dev/docs/llms.txt |
 
 ### Language (1)
 
@@ -164,7 +194,7 @@ Last verified: 2026-02-20
 | React Native | https://reactnative.dev/llms.txt |
 | Expo | https://docs.expo.dev/llms.txt |
 
-> Note: Anthropic/Claude Code docs are excluded — those are handled by the built-in claude-code-guide agent.
+> **Routing note**: Claude Code (CLI), Claude Agent SDK 질문은 built-in `claude-code-guide` agent가 우선 담당. Claude API / 모델 capability / pricing 등 일반 정보는 docs-guide가 `platform.claude.com/llms.txt`로 직접 fetch.
 
 ## URL Patterns to Try
 
