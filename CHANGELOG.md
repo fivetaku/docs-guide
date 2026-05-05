@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.3.3] - 2026-05-05 — Spec-Level Drill-Down + URL extraction protocol
+
+> Council 토론 결과 (Codex + Gemini + Claude Chairman) 적용. 이전 실패 사례
+> ("Gemini 최신 모델" 인덱스만 fetch → "확인 필요" / 자연 이름 추측 → 404) 재발 방지.
+
+### Added — agents/docs-guide.md
+- **Spec-Level Drill-Down Requirement** 신규 섹션
+  - Spec-level triggers 14건 (latest/current, exact API ID, pricing, deprecation,
+    context window, region, endpoint compatibility, modalities, SDK version, schema, sunset)
+  - Drill-down protocol 5단계 (index → href 추출 → detail fetch → cite detail URL)
+  - **Drill-down cap (claim-type-bounded)**: general 1+1-2 / spec 1+3 / latest 1+5 / matrix max 8
+  - Stop condition: "각 exact claim마다 detail-page source 1+"
+- **Quality Gate 분기**: general questions vs spec-level questions
+- **Self-reflection checklist**: 4 항목 (index fetched, detail fetched per claim,
+  hrefs extracted not guessed, source line cites detail)
+- **Error Handling 추가 행 2건**: "Item listed but no detail URL" / "404 on guessed URL → STOP"
+
+### Added — references (신규 파일 2개)
+- `references/webfetch-prompts.md` — 표준 WebFetch prompt 3 템플릿
+  - Template 1: href extraction (preview/beta/canary 접미사 보존)
+  - Template 2: detail page claim extraction (verbatim 인용 강제)
+  - Template 3: multi-source cross-validation (authority chain 정의)
+  - Anti-patterns (NEVER) / OK patterns (always)
+- `references/regression-cases.md` — 8 골든 케이스 (매 릴리즈 전 수동 smoke test)
+  1. Gemini 최신 모델
+  2. Preview/beta suffix model IDs
+  3. Pricing query
+  4. Deprecation date / sunset
+  5. Context window / token limit
+  6. Endpoint compatibility
+  7. Migration / breaking changes
+  8. Marketing index (Neo4j 등)
+
+### Added — references/llms-txt-sites.md
+- ⚠️ LLM Provider 모델 페이지 주의 라벨 (preview/beta 접미사 unguessable, regression cases 안내)
+- ⚠️ LLM Provider 문서 업데이트 비대칭 경고 (overview/pricing/changelog 시점 차이)
+
+### Updated
+- **agents/docs-guide.md** Quality Gate, Error Handling 강화 (위 참조)
+- **skills/docs-guide-knowledge/SKILL.md**:
+  - URL Fix Patterns 표 +2 행 (href 추출 / 404 STOP)
+  - Quality Gate 분기 (general / spec-level)
+- **commands/docs-guide.md**:
+  - Direct fallback 경로에 4-1 (spec-level detail fetch), 4-2 (href 추출) 신규 단계
+  - Step 8 (cite source) — spec-level은 detail URL 명시
+
+### Council 권고 (적용된 핵심 원리)
+- **Index is not evidence** — 인덱스는 라우팅 자료, 인용 근거 아님
+- **Names are not locators** — 자연 이름을 URL/API ID로 변환 금지
+- **Claim-type gates** — 일반 설명 / exact spec / 가격·날짜·지원상태 각각 다른 증거 기준
+- **Bounded drilldown** — 무한 fetch 금지, claim 충족 기준 cap
+- **Fail closed on exact facts** — 정확한 값 필요 질문에서 모르면 모른다고
+
 ## [1.3.2] - 2026-05-04 — llms.txt list expansion 70 → 92
 
 ### Added (+22 verified URLs)

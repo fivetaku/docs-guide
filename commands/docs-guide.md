@@ -37,10 +37,12 @@ If the Task tool cannot find the agent, perform the documentation lookup directl
 2. Try fetching `{site}/llms.txt` with WebFetch
 3. If found, scan the index for relevant page URLs
 4. WebFetch the specific documentation page(s)
+4-1. **Spec-level questions** (latest/current, exact model ID, pricing, deprecation, context window, region availability, endpoint compatibility, modalities, SDK version, schema fields, sunset/release date) → fetch the **detail page**, not just the index. Cap: 1 index + max 5 detail pages depending on question class.
+4-2. **Detail URL unknown** → re-fetch the index using the standard prompt at `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/references/webfetch-prompts.md` Template 1. Extract actual hrefs only — do NOT guess from natural names (`*-preview/beta/canary` suffixes are unguessable).
 5. If llms.txt not found, WebSearch for `{library} official documentation {topic}`
 6. WebFetch the top result from the official domain
 7. Explain based on fetched content
-8. Cite source URL(s)
+8. Cite source URL(s) — for spec-level questions, cite the **detail page URL**, not just the index
 
 ## Response
 

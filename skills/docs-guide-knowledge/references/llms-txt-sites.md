@@ -153,6 +153,17 @@ Last verified: 2026-05-04
 > **Anthropic URL 변경**: 기존 `docs.anthropic.com`은 `platform.claude.com`으로 마이그레이션됨. claude-code-guide는 Claude Code/SDK 담당, docs-guide는 일반 Claude API/모델 정보 fetch에 사용 가능.
 > **Gemini 비표준 경로**: `ai.google.dev/llms.txt`는 404. `gemini-api/docs/llms.txt`가 정확한 경로 (Algolia처럼 비표준).
 
+> ⚠️ **LLM Provider 모델 페이지 주의 (v1.3.3)**:
+> 신규 모델은 `*-preview`, `*-beta`, `*-canary`, `*-experimental`, `*-exp`, `*-rc` 같은 접미사로 노출되는 경우 매우 흔하다.
+> 예: `gemini-3-pro-preview`, `o1-preview-2024-09-12`, `claude-opus-4-7`, `gpt-5-2`.
+> **모델 ID/spec 질문 시 인덱스 페이지에서 actual href 추출 필수** — 자연 이름(`gemini-3.5`, `claude-4.7`, `o1`) 추측 금지.
+> 추출 방법: `references/webfetch-prompts.md` Template 1 사용.
+> 회귀 방지: `references/regression-cases.md` 8 케이스로 매 릴리즈 전 수동 검증.
+
+> ⚠️ **LLM Provider 문서 업데이트 비대칭**:
+> `model overview`, `pricing`, `release notes`, `cookbook`은 서로 다른 시점에 업데이트됨.
+> Spec 질문(가격/deprecation/latest)은 multi-source cross-validation 권장 (`webfetch-prompts.md` Template 3).
+
 ### AI Dev Tools / Infra (11)
 
 | Library/Service | llms.txt URL |

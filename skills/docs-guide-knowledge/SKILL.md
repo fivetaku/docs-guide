@@ -93,9 +93,23 @@ After fetching documentation content:
 
 ## Quality Gate
 
+### General questions
 - Minimum: at least 1 official URL + 1 specific fact/code from the source
 - If insufficient evidence: explicitly state "공식 문서에서 확인하지 못했습니다"
 - If user rejects result ("이 문서 아니야"): try next fallback strategy
+
+### Spec-level questions (v1.3.3 — drill-down required)
+
+For "최신/latest", exact API IDs, pricing, deprecation, context window, region availability, endpoint compatibility, modalities, SDK version, request/response schema, sunset date — see `agents/docs-guide.md` "Spec-Level Drill-Down Requirement" for full trigger list.
+
+- **1 index URL** (proves item exists in current docs)
+- **1 detail page URL per claim** (proves the spec)
+- href URLs **extracted via WebFetch Template 1** (`references/webfetch-prompts.md`), never generated from natural names
+- If guess was used and 404 → STOP guess loop, downgrade to "확인하지 못함"
+- Self-reflection checklist before answer (see agents/docs-guide.md)
+
+### Regression cases
+Run `references/regression-cases.md` 8 cases manually before any release.
 
 ## Error Handling
 
@@ -205,6 +219,8 @@ Documentation URLs often have inconsistencies. Handle these automatically:
 | Path returns 404 | Try parent path for table of contents |
 | GitHub `main` branch 404 | Try `master`, then version-specific branches (e.g., `v8.17`) |
 | URL has trailing slash issues | Try both with and without trailing `/` |
+| Item listed in index but no known detail URL | Re-fetch index using the standard prompt at `references/webfetch-prompts.md` (Template 1) — extract actual hrefs. **Never** generate URLs from natural names. `*-preview/beta/canary` suffixes are unguessable. |
+| 404 on guessed URL (spec-level) | STOP guessing. Re-fetch parent index, extract actual hrefs explicitly, retry with extracted URL. If still no result → answer "확인하지 못함". |
 
 ## Concurrency with Other Agents
 
