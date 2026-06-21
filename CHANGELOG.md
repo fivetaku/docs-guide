@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.2 — 2026-06-21
+
+- GitHub star is now **opt-in** — on first run the command asks once via AskUserQuestion (`네, ⭐ 눌러주기` / `아니요`) instead of auto-starring. The star logic moved into `setup.sh` and records the choice (`~/.gptaku-setup/<plugin>.star.json`) so it never re-asks. `setup.sh` no longer stars anything automatically.
+- Docs: softened the absolute 'always accurate / always current' claims to reflect the explicit knowledge fallback (it says so when it can't fetch a source).
+
 ## [1.3.3] - 2026-05-05 — Spec-Level Drill-Down + URL extraction protocol
 
 > Council 토론 결과 (Codex + Gemini + Claude Chairman) 적용. 이전 실패 사례

@@ -4,7 +4,7 @@ English | [한국어](README.ko.md)
 
 > **Official documentation, fetched live — not from memory.**
 
-Stop trusting AI to recall the right API. docs-guide fetches the actual source directly from official documentation sites so you always get accurate, version-matched answers.
+Stop trusting AI to recall the right API. docs-guide fetches the actual source directly from official documentation sites so your answers are grounded in the real docs. When a source can't be fetched, it says so and falls back to model knowledge explicitly — never silently.
 
 [Quick Start](#quick-start) • [Why docs-guide?](#why-docs-guide) • [How it works](#how-it-works) • [Commands](#commands--skills) • [Requirements](#requirements) • [License](#license)
 
@@ -157,6 +157,6 @@ MIT — [fivetaku](https://github.com/fivetaku)
 
 <div align="center">
 
-**The docs are always current. Your AI should be too.**
+**The docs are pulled live, so your answers track the real source. Your AI should too.**
 
 </div>
