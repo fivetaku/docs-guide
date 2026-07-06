@@ -1,6 +1,10 @@
-English | [한국어](README.ko.md)
+English | [한국어](README.ko.md) | [中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md)
 
 # docs-guide
+
+<p align="center">
+  <img src="assets/docs-guide-hero-01.png" alt="docs-guide" width="320">
+</p>
 
 > **Official documentation, fetched live — not from memory.**
 
