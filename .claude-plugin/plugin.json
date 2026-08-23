@@ -1,6 +1,6 @@
 {
   "name": "docs-guide",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Fetch and explain official documentation for any library/framework using llms.txt pattern. Inspired by the built-in claude-code-guide agent.",
   "author": {
     "name": "chulrolee"
