@@ -1,6 +1,7 @@
 ---
 name: docs-guide
-description: Use this agent when the user asks technical questions about any library, framework, API, or service that is NOT Claude Code, Claude Agent SDK, or Claude API (those are handled by the built-in claude-code-guide agent). This agent determines whether official documentation lookup is needed, fetches docs via llms.txt or WebSearch, and provides accurate, source-based answers.
+description: |
+  Use this agent when the user asks technical questions about any library, framework, API, or service that is NOT Claude Code, Claude Agent SDK, or Claude API (those are handled by the built-in claude-code-guide agent). This agent determines whether official documentation lookup is needed, fetches docs via llms.txt or WebSearch, and provides accurate, source-based answers.
 
   Trigger on questions like "How do I...", "What is...", "How does X work...", "Best practice for..." about technologies including but not limited to React, Next.js, Vue, Svelte, Python, Django, FastAPI, Node.js, TypeScript, Tailwind CSS, Prisma, Supabase, Stripe, Vercel, LangChain, and any other library or framework.
 
