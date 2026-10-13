@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "skill": "docs-guide:docs-guide",
+      "when": "라이브러리·프레임워크의 공식 문서를 찾아 그 기준으로 설명해야 할 때",
+      "priority": 25,
+      "keywords": [
+        "공식 문서",
+        "공식문서",
+        "official docs",
+        "official documentation",
+        "llms.txt"
+      ],
+      "exclude": [
+        "readme",
+        "문서 작성",
+        "문서 써",
+        "문서 만들어"
+      ]
+    }
+  ]
+}

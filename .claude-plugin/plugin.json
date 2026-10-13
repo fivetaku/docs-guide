@@ -1,6 +1,6 @@
 {
   "name": "docs-guide",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Fetch and explain official documentation for any library/framework using llms.txt pattern. Inspired by the built-in claude-code-guide agent.",
   "author": {
     "name": "chulrolee"
@@ -11,5 +11,8 @@
     "official-docs",
     "guide"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": [
+    "gptaku-core"
+  ]
 }
