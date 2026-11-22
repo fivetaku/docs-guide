@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 1.5.0 — 2026-11-22
+- Agent is the single source of the lookup procedure
+- llms.txt list re-verified (87 live)
+- insane-search handoff
+
 ## 1.4.6 — 2026-10-14
 - **gptaku-core routing tuned.** Adjusted keywords and exclusions in `routing.json` against false matches found in real conversations. Takes effect together with gptaku-core 0.1.1.
 
