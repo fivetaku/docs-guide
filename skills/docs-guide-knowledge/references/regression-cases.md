@@ -13,11 +13,11 @@ When updating the agent, run through these and confirm correct behavior.
 **Past failure mode**:
 - Agent fetched `ai.google.dev/gemini-api/docs/llms.txt` (index)
 - Saw model names listed but no detail pages fetched
-- Returned "확인 필요" or guessed natural URL like `gemini-3-flash` → 404
+- Returned "확인 필요" or guessed natural URL like `<family>-<major>-flash` → 404
 
 **Expected behavior (v1.3.3)**:
 1. Detect spec-level trigger ("최신 / latest")
-2. Fetch `gemini-api/docs/llms.txt` index
+2. Fetch the Gemini index (`aistudio.google.com/llms.txt`, redirected from `ai.google.dev/gemini-api/docs/llms.txt`)
 3. Extract actual hrefs (not generate) — preserves `*-preview` suffix
 4. Fetch model overview detail page + release notes/changelog (cap=5 for "latest")
 5. Cite detail page URL in answer
@@ -32,11 +32,11 @@ When updating the agent, run through these and confirm correct behavior.
 
 ## Case 2 — Preview/beta suffix model IDs
 
-**Trigger**: 모델 비교 / API integration 질문 (e.g., "Claude 4.7 사용법", "OpenAI o1-preview vs o1")
+**Trigger**: 모델 비교 / API integration 질문 (e.g., "Claude <버전> 사용법", "OpenAI <model>-preview vs <model>")
 
 **Past failure mode**:
-- Agent generated `claude-4.7` or `o1-mini` from natural reading
-- Actual ID has suffix: `claude-opus-4-7`, `o1-preview-2024-09-12`
+- Agent generated a natural-name ID such as `claude-<major>.<minor>` or `<model>-mini` from natural reading
+- Actual ID has tier/suffix/date parts, e.g. `claude-<tier>-<major>-<minor>`, `<model>-preview-<YYYY-MM-DD>`
 - 404 on guessed URL or wrong API call example
 
 **Expected behavior**:
@@ -46,7 +46,7 @@ When updating the agent, run through these and confirm correct behavior.
 4. Verbatim quote in answer
 
 **Validation**:
-- Answer contains `claude-opus-4-7` (not `claude-4.7`) verbatim
+- Answer contains the exact ID string copied verbatim from the detail page (not a natural-name form like `claude-<major>.<minor>`)
 - API code example uses exact ID string
 
 ---

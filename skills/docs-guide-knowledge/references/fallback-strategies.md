@@ -173,7 +173,7 @@ Used by: FastAPI, Pydantic, Traefik, and many Python projects.
 
 | Tech | Best Strategy | Key URL |
 |------|--------------|---------|
-| SwiftUI | WebFetch only (Apple closed docs) | https://developer.apple.com/documentation/swiftui |
+| SwiftUI | Apple DocC JSON (HTML page is a JS SPA) | https://developer.apple.com/tutorials/data/documentation/swiftui.json |
 | Jetpack Compose | sitemap.xml (Google DevSite) | https://developer.android.com/sitemap.xml |
 
 ### DevOps / Infra
@@ -250,8 +250,9 @@ For REST APIs, check:
 3. GitHub branch fallback → `main` 404시 `master`, 버전 브랜치 시도
 
 ### JS-rendered sites (WebFetch 실패)
-- `developer.apple.com`, `docs.oracle.com` 등 SPA 사이트
-- 대안: GitHub 소스 우선, 없으면 내부 지식으로 답변 + 공식 URL 제공
+- `developer.apple.com/documentation/...`: SPA (2026-11-22 curl, 화면 글자 약 1KB). 같은 경로의 JSON `developer.apple.com/tutorials/data/documentation/<path>.json`이 200으로 본문 제공 → 이것부터 시도
+- `docs.oracle.com` (Java SE API): 정적 HTML이라 정상 fetch됨 (2026-11-22 curl, `List.html` 200·본문 있음). JS 전용 사이트 아님
+- 그래도 막히면(403·WAF·빈 본문·로그인 벽): 에이전트의 Blocked page handoff대로 `insane-search` 스킬에 넘긴다. 그 전까지는 내부 지식 답변 + "공식 문서에서 확인하지 못했습니다" + 공식 URL
 
 ### Version branch mapping
 일부 프로젝트는 docs를 버전 브랜치에 보관:

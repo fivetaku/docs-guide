@@ -33,7 +33,7 @@ Rules:
 - If multiple candidates match, rank by exact token/title overlap with the question.
 ```
 
-**Why this matters**: LLMs given a free-form prompt about "Gemini 3.5 Pro" tend to *generate* a plausible URL like `/models/gemini-3.5-pro`. The actual URL may be `/models/gemini-3-pro-preview` — preview suffix is unguessable.
+**Why this matters**: LLMs given a free-form prompt about "<Family> <X.Y> Pro" tend to *generate* a plausible URL like `/models/<family>-<x.y>-pro`. The actual URL may be `/models/<family>-<x>-pro-preview` — preview suffix is unguessable.
 
 ---
 
