@@ -44,6 +44,8 @@ If no arguments provided, ask the user:
 
 Use the docs-guide agent (Task tool with subagent_type "docs-guide:docs-guide") to fetch and explain the documentation. Pass the library name and question to the agent.
 
+(Procedure, argument handling and response rules are also summarized in `${CLAUDE_PLUGIN_ROOT}/skills/docs-guide-knowledge/SKILL.md` — "실행 환경" section.)
+
 If the Task tool cannot find the agent, Read `${CLAUDE_PLUGIN_ROOT}/agents/docs-guide.md` and follow its procedure directly (it is the single source).
 
 If the agent's answer ends with a `HANDOFF: insane-search` block, invoke the `insane-search:insane-search` skill on that URL and finish the answer from what it returns.

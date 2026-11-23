@@ -28,6 +28,8 @@ Stop trusting AI to recall the right API. docs-guide fetches the actual source d
 /plugin install docs-guide
 ```
 
+Codex: `codex plugin marketplace add fivetaku/gptaku_plugins` then `codex plugin add docs-guide@gptaku-plugins`.
+
 ### 3. Restart Claude Code
 
 Cache loads on startup — a restart is required after installation.

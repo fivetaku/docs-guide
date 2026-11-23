@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0 — 2026-11-23
+- Codex에서도 같은 스킬로 동작: SKILL.md에 "실행 환경" 블록 추가 — Codex는 `agents/docs-guide.md` 절차를 직접 열어 따르고, 서브에이전트·스킬 호출 단계는 순차 실행으로 대체
+- Codex 첫 실행 설정 스크립트 가드 포함
+
 
 ## 1.5.0 — 2026-11-22
 - Agent is the single source of the lookup procedure

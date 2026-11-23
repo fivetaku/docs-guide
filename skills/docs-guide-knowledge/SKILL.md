@@ -12,6 +12,12 @@ Background knowledge about the llms.txt standard and where official docs live. T
 
 **To actually look up docs, follow `${CLAUDE_PLUGIN_ROOT}/agents/docs-guide.md`** — it is the single source of the procedure (intent classification, version awareness, retrieval strategy, spec-level drill-down, quality gates, error handling, blocked-page handoff to insane-search, and the Claude scope rule).
 
+## 실행 환경 (Claude Code / Codex)
+
+- Claude Code: `/docs-guide [library] [question]`은 위 서브에이전트(`docs-guide:docs-guide`)에 넘긴다. 인자 없이 부르면 라이브러리와 주제를 한 번에 묻는다. 답은 사용자 언어로, 관련 코드 예시를 넣고 끝에 출처 URL을 적는다.
+- Codex: `agents/`는 읽지 않으므로 위 절차 파일을 직접 열어 그대로 따른다. `${CLAUDE_PLUGIN_ROOT}`는 이 플러그인 루트(이 SKILL.md에서 두 단계 위 폴더)로 바꿔 읽는다. 서브에이전트 호출 단계는 건너뛰고 같은 세션에서 순차로 수행한다.
+- 절차 끝에 `HANDOFF: insane-search` 블록이 나오면 Claude Code는 `insane-search:insane-search` 스킬을, Codex는 설치된 insane-search 스킬의 SKILL.md를 열어 그 URL을 처리한 뒤 답을 마무리한다. 스킬이 없으면 막혔다고 밝히고 WebSearch 결과로 답한다.
+
 ## What is llms.txt
 
 llms.txt is a convention where websites provide an AI-readable index of their documentation at their root URL (similar to robots.txt for search engines). It enables LLMs to accurately reference official documentation instead of relying on potentially outdated training data.
